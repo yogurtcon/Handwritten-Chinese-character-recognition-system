@@ -1,14 +1,10 @@
-## 数据集和模型
+## 版本
 
-由于文件过大，放网盘上: https://pan.baidu.com/s/17V-mMN5Q1krkqy7ib9y49g 提取码: gaad
+v1.0 识别手写中文数字
 
-这个数据集是我从原有数据集上分割出来的手写中文数字（零到九）的数据集
+https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.0
 
-## 测试得分
-
-test loss: 0.24
-
-test accuracy: 0.94
+测试得分 loss: 0.24 accuracy: 0.94
 
 ## 感谢分享精神
 
