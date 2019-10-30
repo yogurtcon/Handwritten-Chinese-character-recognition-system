@@ -4,9 +4,11 @@
 
 这个数据集是我从原有数据集上分割出来的手写中文数字（零到九）的数据集
 
-## 在测试集上的准确率
+## 测试得分
 
-![image](https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/blob/master/%E5%87%86%E7%A1%AE%E7%8E%87.png?raw=true)
+test loss: 0.24
+
+test accuracy: 0.94
 
 ## 感谢分享精神
 
