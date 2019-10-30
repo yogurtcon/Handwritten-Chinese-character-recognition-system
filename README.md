@@ -1,8 +1,16 @@
+## 数据集和模型
+
+由于文件过大，放在网盘上
+
+这个数据集是我从原有数据集上分割出来的手写中文数字（零到九）的数据集
+
+## 在测试集上的准确率
+
+![image](https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/blob/master/%E5%87%86%E7%A1%AE%E7%8E%87.png?raw=true)
+
 ## 感谢分享精神
 
 参考 知乎用户：想飞的石头 的一篇文章 https://zhuanlan.zhihu.com/p/24698483
 
-作者解压数据集后发现是一些gnt文件，然后用了 斗大的熊猫 里面的代码，将所有文件都转化为对应label目录下的所有png的图片
-
-处理好的数据，放到了云盘 https://pan.baidu.com/s/1o84jIrg#list/path=%2F ，char_dict是汉字和对应的数字label的记录
+作者处理好的数据，放到了云盘 https://pan.baidu.com/s/1o84jIrg#list/path=%2F ，char_dict是汉字和对应的数字label的记录
 
