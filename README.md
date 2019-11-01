@@ -1,4 +1,4 @@
-## 版本
+# 版本
 
 ### v1.0 识别手写中文数字 ###
 
@@ -12,7 +12,7 @@ https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/re
 
 测试得分 loss: 0.65 accuracy: 0.82
 
-## 感谢分享精神
+# 感谢分享精神
 
 参考 知乎用户：想飞的石头 的一篇文章 https://zhuanlan.zhihu.com/p/24698483
 
