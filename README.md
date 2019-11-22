@@ -1,12 +1,18 @@
 # 版本
 
-### v1.0 识别手写中文数字 ###
+### v1.1 ###
+
+https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.1
+
+test loss: 0.18     test acc: 0.96
+
+### v1.0 ###
 
 https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.0
 
 测试得分 loss: 0.24 accuracy: 0.94
 
-### v0.9 一维识别版本 ###
+### v0.9 ###
 
 https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v0.9
 
