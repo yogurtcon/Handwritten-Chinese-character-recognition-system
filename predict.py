@@ -4,14 +4,17 @@ import tensorflow as tf
 import matplotlib.image as mpimg
 
 
-model = tf.keras.models.load_model('Chinese_recognition_model.h5')
+model = tf.keras.models.load_model('Chinese_recognition_model.h5')  # 加载模型
 
-img = mpimg.imread('data/test/1/15048.png')
-img2 = cv2.resize(img, (64, 64))
-img3 = np.zeros((1, img2.shape[0], img2.shape[1], img2.shape[2]))
-img3[0, :] = img2
+img1 = mpimg.imread('data/test/0/2265.png')  # 加载图片
+img2 = cv2.resize(img1, (64, 64))  # 图片缩放
 
+src = img2
+img3 = cv2.cvtColor(src, cv2.COLOR_RGBA2BGR)  # 图片通道数定为三
 
-pre = model.predict_classes(img3)
+img4 = np.zeros((1, img3.shape[0], img3.shape[1], img3.shape[2]))
+img4[0, :] = img3
+
+pre = model.predict_classes(img4)  # 预测
 result = pre[0]
-print(result)
+print('预测结果:', result)

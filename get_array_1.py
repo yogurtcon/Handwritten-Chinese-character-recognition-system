@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import matplotlib.image as mi
+from sklearn.model_selection import train_test_split
 
 
 dataset = []  # 数据集列表
@@ -21,8 +22,14 @@ def load_data(filepath):
         else:
             labels.append(label)
             img = mi.imread(fi_d[:-1])
-            img2 = cv2.resize(img, (64, 64))
+            img2 = cv2.resize(img, (64, 64))  # 将图片统一转化尺寸64，64
             dataset.append(img2)
 
-    return np.array(dataset), np.array(labels)
+    # 在训练集中取一部分作为验证集
+    train_image, val_image, train_label, val_label = train_test_split(
+        np.array(dataset), np.array(labels), random_state=7)
+
+    return train_image, val_image, train_label, val_label
+
+
 
