@@ -1,6 +1,5 @@
 import get_array_1
 import get_array_2
-import get_pyecharts
 import get_pyplot
 import model_v1
 import model_v2
@@ -24,24 +23,25 @@ epochs_range = range(1, epochs+1)
 train_loss = history.history['loss']
 val_loss = history.history['val_loss']
 test_loss = test_scores[0]
-train_acc = history.history['acc']
-val_acc = history.history['val_acc']
+train_accuracy = history.history['accuracy']
+val_accuracy = history.history['val_accuracy']
 test_acc = test_scores[1]
 
 # 将模型保存为 HDF5 文件
 model.save('Chinese_recognition_model.h5')
+print('')
 print("save model: Chinese_recognition_model.h5")
 
 # 绘制图表
 get_pyplot.show(
-    epochs_range, train_loss, val_loss, train_acc, val_acc)
+    epochs_range, train_loss, val_loss, train_accuracy, val_accuracy)
 
 get_pyecharts.line_smooth(
-    epochs_range, train_loss, val_loss, train_acc, val_acc)
+    epochs_range, train_loss, val_loss, train_accuracy, val_accuracy)
 
 #  打印得分
 print('')
-print('train loss:', train_loss[-1], '   ', 'train acc:', train_acc[-1])
-print('val loss:', val_loss[-1], '   ', 'val acc:', val_acc[-1])
+print('train loss:', train_loss[-1], '   ', 'train acc:', train_accuracy[-1])
+print('val loss:', val_loss[-1], '   ', 'val acc:', val_accuracy[-1])
 print('test loss:', test_loss, '   ', 'test acc:', test_acc)
 print('')
