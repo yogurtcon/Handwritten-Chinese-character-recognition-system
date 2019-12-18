@@ -29,9 +29,9 @@ def plot_image(i, predictions_array, true_label, img):
 def plot_value_array(i, predictions_array, true_label):
     predictions_array, true_label = predictions_array, true_label[i]
     plt.grid(False)
-    plt.xticks(range(10), class_names, rotation=45)
+    plt.xticks(range(20), class_names, rotation=45)
     plt.yticks([])
-    thisplot = plt.bar(range(10), predictions_array, color="#777777")
+    thisplot = plt.bar(range(20), predictions_array, color="#777777")
     plt.ylim([0, 1])
     predicted_label = np.argmax(predictions_array)
 
@@ -39,19 +39,18 @@ def plot_value_array(i, predictions_array, true_label):
     thisplot[true_label].set_color('blue')
 
 
-class_names = ['ling', 'yi', 'er', 'san', 'si', 'wu', 'liu', 'qi', 'Ba', 'jiu']
+class_names = ['líng', 'yī', 'èr', 'sān', 'sì', 'wǔ', 'liù', 'qī', 'bā', 'jiǔ', 'zhào', 'qìng', 'xué', 'yuàn',
+               'jì', 'suàn', 'jī', 'yáng', 'xiān', 'shēng']
 
-model = tf.keras.models.load_model('Chinese_recognition_model_test.h5')
+model = tf.keras.models.load_model('Chinese_recognition_model.h5')
 
 (test_image, test_label) = get_array_2.load_data('data/test/')
 
 predictions = model.predict(test_image)
 
-i = 520
-plt.figure(figsize=(6, 3))
-plt.subplot(1, 2, 1)
+i = 1000
+plt.subplot(2, 1, 1)
 plot_image(i, predictions[i], test_label, test_image)
-plt.subplot(1, 2, 2)
+plt.subplot(2, 1, 2)
 plot_value_array(i, predictions[i],  test_label)
 plt.show()
-

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def show(epochs_range, train_loss, val_loss, train_acc, val_acc):
+def show(epochs_range, train_loss, val_loss, train_accuracy, val_accuracy):
 
     plt.subplot(1, 2, 1)
     plt.plot(epochs_range, train_loss, label='Training Loss')
@@ -10,10 +10,10 @@ def show(epochs_range, train_loss, val_loss, train_acc, val_acc):
     plt.title('Training and Validation Loss')
 
     plt.subplot(1, 2, 2)
-    plt.plot(epochs_range, train_acc, label='Training Accuracy')
-    plt.plot(epochs_range, val_acc, label='Validation Accuracy')
+    plt.plot(epochs_range, train_accuracy, label='Training Accuracy')
+    plt.plot(epochs_range, val_accuracy, label='Validation Accuracy')
     plt.legend(loc='lower right')
     plt.title('Training and Validation Accuracy')
 
-    plt.savefig('acc_loss_pyplot.png')
+    plt.savefig('Model score')
     plt.show()
