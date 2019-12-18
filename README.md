@@ -1,5 +1,15 @@
 # 版本
 
+### v1.2 ###
+
+http
+
+train loss: 0.04     train accuracy: 0.99
+
+val loss: 0.18     val accuracy: 0.96
+
+test loss: 0.21     test accuracy: 0.95
+
 ### v1.1 ###
 
 https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.1
