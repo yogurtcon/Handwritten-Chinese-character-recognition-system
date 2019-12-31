@@ -1,16 +1,17 @@
+# 直接一次性加载全部数据
+
 import get_model
 import get_pyplot
-import get_array_1
-import get_array_2
+import get_train_array
+import get_test_array
 
-
-epochs = 8  # 选择批次
+epochs = 10  # 选择批次
 
 model = get_model.get_model()  # 选择模型
 
 # 加载训练数据和测试数据
-(train_image, val_image, train_label, val_label) = get_array_1.load_data('data/train/')
-(test_image, test_label) = get_array_2.load_data('data/test/')
+(train_image, val_image, train_label, val_label) = get_train_array.load_data('data/train/')
+(test_image, test_label) = get_test_array.load_data('data/test/')
 
 # 训练, fit方法自带shuffle随机读取
 history = model.fit(

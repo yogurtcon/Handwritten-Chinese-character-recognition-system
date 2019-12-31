@@ -25,7 +25,7 @@ def get_model():
     model.add(Dense(512, activation='relu'))
 
     model.add(Dropout(0.2))
-    model.add(Dense(20, activation='softmax'))
+    model.add(Dense(100, activation='softmax'))
 
     model.summary()
 

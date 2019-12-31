@@ -1,8 +1,11 @@
+# 分批次加载数据，无灰度化操作，图片格式为(64, 64, 3)
+
 from __future__ import print_function
 import os
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers import Input, Dense, Dropout, Convolution2D, MaxPooling2D, Flatten
 from keras.models import Model, load_model
+import get_pyplot
 
 data_dir = 'data'
 train_data_dir = os.path.join(data_dir, 'train')
@@ -10,8 +13,8 @@ test_data_dir = os.path.join(data_dir, 'test')
 
 # dimensions of our images.
 img_width, img_height = 64, 64
-charset_size = 20
-nb_nb_epoch = 20
+charset_size = 100
+nb_nb_epoch = 18
 
 
 def train(model):
@@ -27,24 +30,33 @@ def train(model):
         train_data_dir,
         target_size=(img_width, img_height),
         batch_size=1024,
-        color_mode="grayscale",
+        # color_mode="grayscale",
         class_mode='categorical')
     validation_generator = test_datagen.flow_from_directory(
         test_data_dir,
         target_size=(img_width, img_height),
         batch_size=1024,
-        color_mode="grayscale",
+        # color_mode="grayscale",
         class_mode='categorical')
 
     model.compile(loss='categorical_crossentropy',
                   optimizer='rmsprop',
                   metrics=['accuracy'])
-    model.fit_generator(train_generator,
-                        nb_epoch=nb_nb_epoch,
-                        validation_data=validation_generator,)
+    history = model.fit_generator(train_generator,
+                                  nb_epoch=nb_nb_epoch,
+                                  validation_data=validation_generator,)
+
+    epochs_range = range(1, nb_nb_epoch + 1)
+    train_loss = history.history['loss']
+    val_loss = history.history['val_loss']
+    train_accuracy = history.history['accuracy']
+    val_accuracy = history.history['val_accuracy']
+
+    # 绘制图表
+    get_pyplot.show(epochs_range, train_loss, val_loss, train_accuracy, val_accuracy)
 
 
-def build_model(include_top=True, input_shape=(64, 64, 1), classes=charset_size):
+def build_model(include_top=True, input_shape=(64, 64, 3), classes=charset_size):
     img_input = Input(shape=input_shape)
     x = Convolution2D(32, 3, 3, activation='relu', border_mode='same', name='block1_conv1')(img_input)
     x = Convolution2D(32, 3, 3, activation='relu', border_mode='same', name='block1_conv2')(x)

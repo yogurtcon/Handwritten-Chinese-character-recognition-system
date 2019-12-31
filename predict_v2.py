@@ -1,5 +1,7 @@
+import random
+
 import tensorflow as tf
-import get_array_2
+import get_test_array
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -23,34 +25,25 @@ def plot_image(i, predictions_array, true_label, img):
                                          class_names[true_label]),
                color=color)
 
-    print('预测结果:', class_names[predicted_label])
 
+class_names = list(range(100))
 
-def plot_value_array(i, predictions_array, true_label):
-    predictions_array, true_label = predictions_array, true_label[i]
-    plt.grid(False)
-    plt.xticks(range(20), class_names, rotation=45)
-    plt.yticks([])
-    thisplot = plt.bar(range(20), predictions_array, color="#777777")
-    plt.ylim([0, 1])
-    predicted_label = np.argmax(predictions_array)
+model = tf.keras.models.load_model('Chinese_recognition_model_v2.h5')
 
-    thisplot[predicted_label].set_color('red')
-    thisplot[true_label].set_color('blue')
+(test_image, test_label) = get_test_array.load_data('data/test/')
 
-
-class_names = ['líng', 'yī', 'èr', 'sān', 'sì', 'wǔ', 'liù', 'qī', 'bā', 'jiǔ', 'zhào', 'qìng', 'xué', 'yuàn',
-               'jì', 'suàn', 'jī', 'yáng', 'xiān', 'shēng']
-
-model = tf.keras.models.load_model('Chinese_recognition_model.h5')
-
-(test_image, test_label) = get_array_2.load_data('data/test/')
+index = [x for x in range(len(test_label))]
+random.shuffle(index)
+test_image = test_image[index]
+test_label = test_label[index]
 
 predictions = model.predict(test_image)
 
-i = 1000
-plt.subplot(2, 1, 1)
-plot_image(i, predictions[i], test_label, test_image)
-plt.subplot(2, 1, 2)
-plot_value_array(i, predictions[i],  test_label)
+# Plot the first X test images, their predicted labels, and the true labels.
+# Color correct predictions in blue and incorrect predictions in red.
+plt.figure(figsize=(10, 10))
+for i in range(36):
+  plt.subplot(6, 6, i+1)
+  plot_image(i, predictions[i], test_label, test_image)
+plt.tight_layout()
 plt.show()
