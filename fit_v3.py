@@ -1,4 +1,4 @@
-#
+# 先训练一次，再在第一次训练得到的模型的基础上进行训练七次，当有某一次测试准确率达到0.95以上的时候停止训练
 
 import get_model
 import get_train_array
