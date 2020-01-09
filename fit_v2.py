@@ -53,7 +53,7 @@ def train(model):
     val_accuracy = history.history['val_accuracy']
 
     # 绘制图表
-    get_pyplot.show(epochs_range, train_loss, val_loss, train_accuracy, val_accuracy)
+    get_pyplot.show(epochs_range, train_loss, val_loss, train_accuracy, val_accuracy, 'Model_score_v2')
 
 
 def build_model(include_top=True, input_shape=(64, 64, 3), classes=charset_size):

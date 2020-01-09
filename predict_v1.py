@@ -4,7 +4,7 @@ import tensorflow as tf
 import matplotlib.image as mpimg
 
 
-model = tf.keras.models.load_model('Chinese_recognition_model.h5')
+model = tf.keras.models.load_model('Chinese_recognition_model_v1.h5')
 
 img = mpimg.imread('data/test/00000/63083.png')
 img2 = cv2.resize(img, (64, 64))
