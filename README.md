@@ -2,12 +2,12 @@
 
 ### v1.4 ###
 
-
+https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.4
 
 Chinese_recognition_model_v1.h5    epochs = 18
 
 train loss: 0.06680139807916305     train accuracy: 0.97753626
-val loss: 0.5082350039337887     val accuracy: 0.8956477642059326
+
 test loss: 0.5099224895140645     test accuracy: 0.8906747102737427
 
 Chinese_recognition_model_v2.h5    epochs = 18
@@ -21,7 +21,7 @@ https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/re
 Chinese_recognition_model.h5    epochs:10
 
 train loss: 0.11947370274117632     train accuracy: 0.9578175
-val loss: 0.47219873436071996     val accuracy: 0.8951436877250671
+
 test loss: 0.5367488763688817     test accuracy: 0.8849824070930481
 
 Chinese_recognition_model_v2    epochs:20
