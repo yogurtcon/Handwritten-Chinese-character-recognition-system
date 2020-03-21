@@ -5,7 +5,7 @@ import get_pyplot
 import get_train_array
 import get_test_array
 
-epochs = 18  # 选择批次
+epochs = 20  # 选择批次
 
 model = get_model.get_model()  # 选择模型
 
@@ -24,20 +24,20 @@ epochs_range = range(1, epochs+1)
 train_loss = history.history['loss']
 val_loss = history.history['val_loss']
 test_loss = test_scores[0]
-train_accuracy = history.history['accuracy']
-val_accuracy = history.history['val_accuracy']
-test_accuracy = test_scores[1]
+train_acc = history.history['acc']
+val_acc = history.history['val_acc']
+test_acc = test_scores[1]
 
 # 将模型保存为 HDF5 文件
 model.save('Chinese_recognition_model_v1.h5')
 print("save model: Chinese_recognition_model_v1.h5")
 
 # 绘制图表
-get_pyplot.show(epochs_range, train_loss, val_loss, train_accuracy, val_accuracy, 'Model_score_v1')
+get_pyplot.show(epochs_range, train_loss, val_loss, train_acc, val_acc, 'Model_score_v1')
 
 #  打印得分
 print('')
-print('train loss:', train_loss[-1], '   ', 'train accuracy:', train_accuracy[-1])
-print('val loss:', val_loss[-1], '   ', 'val accuracy:', val_accuracy[-1])
-print('test loss:', test_loss, '   ', 'test accuracy:', test_accuracy)
+print('train loss:', train_loss[-1], '   ', 'train accuracy:', train_acc[-1])
+print('val loss:', val_loss[-1], '   ', 'val accuracy:', val_acc[-1])
+print('test loss:', test_loss, '   ', 'test accuracy:', test_acc)
 print('')

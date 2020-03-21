@@ -22,7 +22,7 @@ def load_data(filepath):
         else:
             labels.append(label)
             img = mi.imread(fi_d[:-1])
-            img2 = cv2.resize(img, (64, 64))
+            img2 = cv2.resize(img, (64, 64))  # (64,64,3)
             dataset.append(img2)
 
     # 在训练集中取一部分作为验证集

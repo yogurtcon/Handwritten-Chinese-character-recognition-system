@@ -4,6 +4,10 @@ import tensorflow as tf
 import get_test_array
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+# 忽略警告：Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 
 
 def plot_image(i, predictions_array, true_label, img):
@@ -43,7 +47,7 @@ predictions = model.predict(test_image)
 # Color correct predictions in blue and incorrect predictions in red.
 plt.figure(figsize=(10, 10))
 for i in range(36):
-  plt.subplot(6, 6, i+1)
-  plot_image(i, predictions[i], test_label, test_image)
+    plt.subplot(6, 6, i+1)
+    plot_image(i, predictions[i], test_label, test_image)
 plt.tight_layout()
 plt.show()
