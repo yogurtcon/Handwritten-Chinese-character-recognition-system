@@ -8,6 +8,10 @@ In this paper, using tensorflow machine learning framework, a handwritten Chines
 
 ### v2.0 ###
 
+https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v2.0
+
+运行程序前要先创建original pic和cut pic两个文件夹，将需要识别的图片放入original pic文件夹，运行predict_v4.py文件会输出识别出的字，cut pic文件夹中会出现原图片切割出来的每个文字单独的图片
+
 ### v1.4 ###
 
 https://github.com/yogurtcon/Handwritten-Chinese-character-recognition-system/releases/tag/v1.4
