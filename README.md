@@ -1,8 +1,8 @@
 # Introduction
 
-本文使用tensorflow机器学习框架，设计了基于卷积神经网络结构的手写汉字识别模型。该模型使用HWDB1.1手写汉字数据集中的一百个字进行训练，神经网络模型由一个Flatten层，一个Dropout层，两个Dense层，四个Convolution2D层和两个MaxPooling2D层组成，使用Adam优化器进行优化训练。
+针对低端计算机一般场景下的手写汉字识别，采用HWDB1.1数据集里面随机的100个汉字，使用机器学习框架Tensorflow，设计了基于卷积神经网络结构的手写汉字识别模型。实验结果表明，模型能够以很少的训练次数快速收敛，准确率达到93%以上。
 
-In this paper, using tensorflow machine learning framework, a handwritten Chinese character recognition model based on convolutional neural network structure is designed. The model uses 100 words in hwdb1.1 handwritten Chinese character data set for training. The neural network model is composed of a flatten layer, a dropout layer, two dense layers, four revolution 2D layers and two maxpooling2d layers. The Adam optimizer is used for optimization training.
+Aiming at handwritten Chinese character recognition in low-end computer general scene, a handwritten Chinese character recognition model based on convolution neural network structure is designed by using 100 random Chinese characters in hwdb1.1 data set and tensorflow, a machine learning framework. The experimental results show that the model can converge quickly with few training times, and the accuracy is over 93%.
 
 # Version
 
